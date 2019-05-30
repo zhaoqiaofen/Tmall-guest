@@ -1,0 +1,21 @@
+<template>
+    <view>找优惠券</view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Search extends wepy.page {
+    config = {
+        navigationBarTitleText: '找优惠券'
+    }
+    data = {
+
+    }
+    methods = {
+
+    }
+}
+</script>
+
+<style lang="less">
+
+</style>

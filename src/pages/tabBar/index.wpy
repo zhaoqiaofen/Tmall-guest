@@ -1,0 +1,221 @@
+<template>
+    <view class="page">
+        <view class="page__hd">
+            <view-searchbar id="searchbar"></view-searchbar>
+        </view>
+        <view class="page__bd">
+            <view class="nav_list">
+                <navigator open-type="navigate">
+                    <image src="../../images/icon_nav_01_new.png" class="nav_icon">
+                    <view class="nav_text">苏宁易购</view>
+                </navigator>
+                <navigator open-type="navigate">
+                    <image src="../../images/icon_nav_02_new.png" class="nav_icon"/>
+                    <view class="nav_text">天猫超市</view>
+                </navigator>
+                <navigator open-type="navigate">
+                    <image src="../../images/icon_nav_03_new.png" class="nav_icon"/>
+                    <view class="nav_text">天猫国际</view>
+                </navigator>
+                <navigator open-type="navigate">
+                    <image src="../../images/icon_nav_01_new.png" class="nav_icon"/>
+                    <view class="nav_text">聚划算</view>
+                </navigator>
+                <navigator open-type="navigate">
+                    <image src="../../images/icon_nav_03.png" class="nav_icon"/>
+                    <view class="nav_text">分类</view>
+                </navigator>
+            </view>
+            <swiper class="swiper" indicator-active-color="{{indicatorActiveColor}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+                <block wx:for="{{adList}}" wx:key="key">
+                    <swiper-item>
+                        <image src="{{item.picUrl}}" class="slide-image" />
+                    </swiper-item>
+                </block>
+            </swiper>
+            <view class="icon_alert">
+                <image src="../../images/icon_alert.png" />
+            </view>
+            <view class="box_four">
+                <view class="box_four__item">
+                    <view class="placeholder">限时抢购</view>
+                    <view class="item_box">
+                        <view class="item_box__item">
+                            <image src="../../images/goods_1.png"/>
+                            <span>满300减20</span>
+                        </view>
+                        <view class="item_box__item">
+                            <image src="../../images/goods_2.png"/>
+                            <span>满300减20</span>
+                        </view>
+                    </view>
+                </view>
+                <view class="box_four__item">
+                    <view class="placeholder">天猫好物</view>
+                    <view class="item_box">
+                        <view class="item_box__item">
+                            <image src="../../images/goods_3.png"/>
+                            <span>好货必买</span>
+                        </view>
+                        <view class="item_box__item">
+                            <image src="../../images/goods_4.png"/>
+                            <span>好货必买</span>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="box_four">
+                <view class="box_four__item">
+                    <view class="placeholder">聚划算</view>
+                    <view class="item_box">
+                        <view class="item_box__item">
+                            <image src="../../images/goods_5.png"/>
+                            <span>满258减20</span>
+                        </view>
+                        <view class="item_box__item">
+                            <image src="../../images/goods_6.png"/>
+                            <span>满300减20</span>
+                        </view>
+                    </view>
+                </view>
+                <view class="box_four__item">
+                    <view class="placeholder">天猫闪降</view>
+                    <view class="item_box">
+                        <view class="item_box__item">
+                            <image src="../../images/goods_7.png"/>
+                            <span>已降11元</span>
+                        </view>
+                        <view class="item_box__item">
+                            <image src="../../images/goods_8.png"/>
+                            <span>已降30元</span>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<script>
+import wepy from 'wepy'
+import Searchbar from '../../components/searchbar'
+export default class Index extends wepy.page {
+    config = {
+        navigationBarTitleText: '淘宝客'
+    }
+    components = {
+        'view-searchbar': Searchbar
+    };
+    data = {
+        indicatorActiveColor: "#fff",//当前选中的指示点颜色
+        indicatorDots: true,//是否显示面板指示点
+        autoplay: true,//是否自动切换
+        interval: 3000,//自动切换时间间隔
+        duration: 1000,//滑动动画时长
+        //广告列表
+        adList: [
+            {
+                picUrl: '../../images/image_demo.png'
+            },
+            {
+                picUrl: '../../images/banner_1.png'
+            },
+            {
+                picUrl: '../../images/banner_2.png'
+            },
+        ],
+    }
+    methods = {
+        
+    }
+}
+</script>
+
+<style lang="less">
+.nav_list {
+  color: #404040;
+  display: flex;
+  font-size: 26rpx;
+  justify-content: space-between;
+  padding: 17rpx 50rpx;
+  navigator {
+    text-align: center
+  }
+  .nav_icon {
+    height: 80rpx;
+    margin: 0 auto;
+    width: 80rpx;
+    margin-bottom: 14rpx;
+  }
+  .nav_text {
+    font-size: 26rpx
+  }
+}
+.swiper {
+    height: 348rpx;
+    .slide-image {
+        width: 100%;
+        height: 100%;
+    }
+}
+.icon_alert{
+    height: 400rpx;
+    image{
+        height: 100%;
+    }
+}
+.box_four{
+    text-align: cener;
+    .box_four__item{
+        width: 345rpx;
+        height:290rpx;
+        border:1px solid #f7f7f7;
+        background-color:#f7f7f7;
+        float:left;
+        margin-left:20rpx;
+        margin-bottom:20rpx;
+        .placeholder{
+            font-size:38rpx;
+            font-weight:600;
+            width:160rpx;
+            margin:20rpx 30rpx;
+            color: rgb(32, 32, 32)
+        }
+        .item_box{
+            text-align: center;
+            .item_box__item{
+                float: left;
+                margin-left: 30rpx;
+                image{
+                    width: 140rpx;
+                    height: 145rpx;
+                }
+                span{
+                    white-space:nowrap;
+                    border:1rpx solid #ff0036;
+                    position:relative;
+                    box-sizing:border-box;
+                    display:block;
+                    -webkit-box-orient:vertical;
+                    flex-direction:column;
+                    align-content:flex-start;
+                    flex-shrink:0;
+                    font-size:23rpx;
+                    max-width:125rpx;
+                    text-overflow:ellipsis;
+                    background-color:#ffedf1;
+                    height:34rpx;
+                    line-height:27rpx;
+                    padding-left:2rpx;
+                    padding-right:2rpx;
+                    border-radius:1rpx;
+                    color:#ff0036;
+                    text-align:center;
+                    overflow:hidden;
+                    margin-top: -20rpx;
+                    margin-left: 10rpx;
+                }
+            }
+        }
+    }
+}
+</style>
