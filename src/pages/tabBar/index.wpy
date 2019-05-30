@@ -92,12 +92,55 @@
                     </view>
                 </view>
             </view>
+            <view class="box-five">
+                <view class="box-five__tile">天猫榜单</view>
+                <view class="top_1">
+                    <span class="mark">趋势榜</span>
+                    <view class="top_img">
+                        <image src="../../images/goods_9.png"/>
+                    </view>
+                    <span class="desc">多玩法百变轨道</span>
+                    <span class="explain">人气上升305%</span>
+                </view>
+                <view class="top_2">
+                    <span class="mark">趋势榜</span>
+                    <view class="top_img">
+                        <image src="../../images/goods_10.png"/>
+                    </view>
+                    <span class="desc">黎漾素颜霜女v7</span>
+                    <span class="explain">人气上升558%</span>
+                </view>
+                <view class="top_1">
+                    <span class="mark">趋势榜</span>
+                    <view class="top_img">
+                        <image src="../../images/goods_11.png"/>
+                    </view>
+                    <span class="desc">时尚单肩斜挎包</span>
+                    <span class="explain">人气上升370%</span>
+                </view>
+            </view>
+            <view class="box-six">
+                <span class="mark_two">人气榜</span>
+                <view class="box-six__title">
+                    <span>性价正装鞋子榜</span>
+                    <span>月销5802件</span>
+                </view>
+                <view class="box-six__swiper">
+                    <swiper class="swiper" autoplay="{{autoplay_two}}" interval="{{interval_two}}" duration="{{duration_two}}" circular="true">
+                        <block wx:for="{{adList_two}}" wx:key="key">
+                            <swiper-item>
+                                <image src="{{item.picUrl}}" class="slide-image" />
+                            </swiper-item>
+                        </block>
+                    </swiper>
+                </view>
+            </view>
         </view>
     </view>
 </template>
 <script>
 import wepy from 'wepy'
-import Searchbar from '../../components/searchbar'
+import Searchbar from '../../components/searchbar'//搜索组价
 export default class Index extends wepy.page {
     config = {
         navigationBarTitleText: '淘宝客'
@@ -111,6 +154,9 @@ export default class Index extends wepy.page {
         autoplay: true,//是否自动切换
         interval: 3000,//自动切换时间间隔
         duration: 1000,//滑动动画时长
+        autoplay_two: true,//是否自动切换
+        interval_two: 3000,//自动切换时间间隔
+        duration_two: 1000,//滑动动画时长
         //广告列表
         adList: [
             {
@@ -123,6 +169,14 @@ export default class Index extends wepy.page {
                 picUrl: '../../images/banner_2.png'
             },
         ],
+        adList_two: [
+            {
+                picUrl: '../../images/goods_14.png'
+            },
+            {
+                picUrl: '../../images/goods_15.png'
+            }
+        ]
     }
     methods = {
         
@@ -131,6 +185,7 @@ export default class Index extends wepy.page {
 </script>
 
 <style lang="less">
+//导航栏
 .nav_list {
   color: #404040;
   display: flex;
@@ -150,6 +205,7 @@ export default class Index extends wepy.page {
     font-size: 26rpx
   }
 }
+//轮播
 .swiper {
     height: 348rpx;
     .slide-image {
@@ -159,10 +215,12 @@ export default class Index extends wepy.page {
 }
 .icon_alert{
     height: 400rpx;
+    text-align: center;
     image{
         height: 100%;
     }
 }
+//限时抢购
 .box_four{
     text-align: cener;
     .box_four__item{
@@ -214,6 +272,145 @@ export default class Index extends wepy.page {
                     margin-top: -20rpx;
                     margin-left: 10rpx;
                 }
+            }
+        }
+    }
+}
+//天猫榜单
+.box-five{
+    text-align: center;
+    .box-five__tile{
+        text-align: left;
+        margin-left: 20rpx;
+        white-space: pre-wrap;
+        border: 0px solid black;
+        position: relative;
+        box-sizing: border-box;
+        display: block;
+        -webkit-box-orient: vertical;
+        flex-direction: column;
+        align-content: flex-start;
+        flex-shrink: 0;
+        font-size: 36rpx;
+        color: rgb(51, 51, 51);
+        font-weight: bold;
+    }
+    .top_img{
+        width: 100%;
+        image{
+            width: 140rpx;
+            height: 140rpx;
+            margin-top: 20rpx;
+        }
+    }
+    .mark{
+        background-color: #43362f;
+        color: #ebddc1;
+        font-size:26rpx;
+        padding:5rpx 5rpx;
+        display: flex;
+        position: absolute;
+        top: 0rpx;
+        left: 10rpx;
+    }
+    .desc{
+        font-size: 24rpx;
+        padding: 5rpx 15rpx;
+        background-color: #364aa3;
+        border: 1rpx solid #364aa3;
+        border-radius: 30rpx;
+        color: #fff;
+    }
+    .explain{
+        font-size: 26rpx;
+        color: #616161;
+    }
+    .top_1{
+        width: 220rpx;
+        height: 290rpx;
+        background-color: #f2e8e8;
+        display: inline-block;
+        vertical-align: bottom;
+        margin:0px 10rpx;
+        position: relative;
+        border-radius: 5rpx;
+    }
+    .top_2{
+        width: 220rpx;
+        height: 320rpx;
+        background-color: #f2e8e8;
+        display: inline-block;
+        vertical-align: bottom;
+        margin:0px 10rpx;
+        image{
+            margin-top: 50rpx !important;
+        }
+        position: relative;
+        border-radius: 5rpx;
+    }
+}
+//人气榜
+.box-six{
+    background-color: #f8f8f8;
+    margin: 20rpx;
+    display: flex;
+    position: relative;
+    .mark_two{
+        background-color: #c99d6a;
+        color: #ffffff;
+        font-size:26rpx;
+        padding:5rpx 5rpx;
+        display: flex;
+        position: absolute;
+        top: 0rpx;
+        left: 30rpx;
+    }
+    .box-six__title{
+        display: inline-block;
+        width: 250rpx;
+        padding-top:50rpx;
+        padding-left:30rpx;
+        span:nth-child(1){
+            white-space: nowrap;
+            border: 0rpx solid black;
+            position: relative;
+            box-sizing: border-box;
+            display: block;
+            -webkit-box-orient: vertical;
+            flex-direction: column;
+            align-content: flex-start;
+            flex-shrink: 0;
+            font-size: 26rpx;
+            color: rgb(49, 49, 49);
+            line-height: 40rpx;
+            font-weight: 600;
+            overflow: hidden;
+        }
+        span:nth-child(2){
+            white-space: nowrap;
+            border: 0rpx solid black;
+            position: relative;
+            box-sizing: border-box;
+            display: block;
+            -webkit-box-orient: vertical;
+            flex-direction: column;
+            align-content: flex-start;
+            flex-shrink: 0;
+            font-size: 24rpx;
+            color: rgb(153, 153, 153);
+            line-height: 40rpx;
+            overflow: hidden;
+        }
+    }
+    .box-six__swiper{
+        // float: right;
+        display: inline-block;
+        .swiper{
+            height:150rpx;
+            width:400rpx;
+            image{
+                width: 100%;
+                height: 100%;
             }
         }
     }
