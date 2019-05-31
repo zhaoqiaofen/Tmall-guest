@@ -6,23 +6,23 @@
         <view class="page__bd">
             <view class="nav_list">
                 <navigator open-type="navigate">
-                    <image src="../../images/icon_nav_01_new.png" class="nav_icon">
+                    <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/icon_nav_01_new.png" class="nav_icon">
                     <view class="nav_text">苏宁易购</view>
                 </navigator>
                 <navigator open-type="navigate">
-                    <image src="../../images/icon_nav_02_new.png" class="nav_icon"/>
+                    <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/icon_nav_02_new.png" class="nav_icon"/>
                     <view class="nav_text">天猫超市</view>
                 </navigator>
                 <navigator open-type="navigate">
-                    <image src="../../images/icon_nav_03_new.png" class="nav_icon"/>
+                    <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/icon_nav_03_new.png" class="nav_icon"/>
                     <view class="nav_text">天猫国际</view>
                 </navigator>
                 <navigator open-type="navigate">
-                    <image src="../../images/icon_nav_01_new.png" class="nav_icon"/>
+                    <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/icon_nav_04_new.png" class="nav_icon"/>
                     <view class="nav_text">聚划算</view>
                 </navigator>
                 <navigator open-type="navigate">
-                    <image src="../../images/icon_nav_03.png" class="nav_icon"/>
+                    <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/icon_nav_03.png" class="nav_icon"/>
                     <view class="nav_text">分类</view>
                 </navigator>
             </view>
@@ -34,18 +34,18 @@
                 </block>
             </swiper>
             <view class="icon_alert">
-                <image src="../../images/icon_alert.png" />
+                <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/icon_alert.png" />
             </view>
             <view class="box_four">
                 <view class="box_four__item">
                     <view class="placeholder">限时抢购</view>
                     <view class="item_box">
                         <view class="item_box__item">
-                            <image src="../../images/goods_1.png"/>
+                            <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_1.png"/>
                             <span>满300减20</span>
                         </view>
                         <view class="item_box__item">
-                            <image src="../../images/goods_2.png"/>
+                            <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_2.png"/>
                             <span>满300减20</span>
                         </view>
                     </view>
@@ -54,11 +54,11 @@
                     <view class="placeholder">天猫好物</view>
                     <view class="item_box">
                         <view class="item_box__item">
-                            <image src="../../images/goods_3.png"/>
+                            <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_3.png"/>
                             <span>好货必买</span>
                         </view>
                         <view class="item_box__item">
-                            <image src="../../images/goods_4.png"/>
+                            <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_4.png"/>
                             <span>好货必买</span>
                         </view>
                     </view>
@@ -69,11 +69,11 @@
                     <view class="placeholder">聚划算</view>
                     <view class="item_box">
                         <view class="item_box__item">
-                            <image src="../../images/goods_5.png"/>
+                            <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_5.png"/>
                             <span>满258减20</span>
                         </view>
                         <view class="item_box__item">
-                            <image src="../../images/goods_6.png"/>
+                            <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_6.png"/>
                             <span>满300减20</span>
                         </view>
                     </view>
@@ -82,11 +82,11 @@
                     <view class="placeholder">天猫闪降</view>
                     <view class="item_box">
                         <view class="item_box__item">
-                            <image src="../../images/goods_7.png"/>
+                            <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_7.png"/>
                             <span>已降11元</span>
                         </view>
                         <view class="item_box__item">
-                            <image src="../../images/goods_8.png"/>
+                            <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_8.png"/>
                             <span>已降30元</span>
                         </view>
                     </view>
@@ -97,7 +97,7 @@
                 <view class="top_1">
                     <span class="mark">趋势榜</span>
                     <view class="top_img">
-                        <image src="../../images/goods_9.png"/>
+                        <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_9.png"/>
                     </view>
                     <span class="desc">多玩法百变轨道</span>
                     <span class="explain">人气上升305%</span>
@@ -105,7 +105,7 @@
                 <view class="top_2">
                     <span class="mark">趋势榜</span>
                     <view class="top_img">
-                        <image src="../../images/goods_10.png"/>
+                        <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_10.png"/>
                     </view>
                     <span class="desc">黎漾素颜霜女v7</span>
                     <span class="explain">人气上升558%</span>
@@ -113,7 +113,7 @@
                 <view class="top_1">
                     <span class="mark">趋势榜</span>
                     <view class="top_img">
-                        <image src="../../images/goods_11.png"/>
+                        <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_11.png"/>
                     </view>
                     <span class="desc">时尚单肩斜挎包</span>
                     <span class="explain">人气上升370%</span>
@@ -135,6 +135,7 @@
                     </swiper>
                 </view>
             </view>
+            
         </view>
     </view>
 </template>
@@ -160,21 +161,21 @@ export default class Index extends wepy.page {
         //广告列表
         adList: [
             {
-                picUrl: '../../images/image_demo.png'
+                picUrl: 'cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/image_demo.png'
             },
             {
-                picUrl: '../../images/banner_1.png'
+                picUrl: 'cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/banner_1.png'
             },
             {
-                picUrl: '../../images/banner_2.png'
+                picUrl: 'cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/banner_2.png'
             },
         ],
         adList_two: [
             {
-                picUrl: '../../images/goods_14.png'
+                picUrl: 'cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_14.png'
             },
             {
-                picUrl: '../../images/goods_15.png'
+                picUrl: 'cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_15.png'
             }
         ]
     }

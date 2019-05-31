@@ -39,7 +39,7 @@ export default class extends wepy.app {
       {
         root: 'pages/users_package',//根目录
         pages: [          //根目录下的路径
-          'pages/test'
+          'page/test'
         ]
       }
     ],
