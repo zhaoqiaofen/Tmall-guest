@@ -42,11 +42,11 @@
                     <view class="item_box">
                         <view class="item_box__item">
                             <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_1.png"/>
-                            <span>满300减20</span>
+                            <span class="Full_reduction">满300减20</span>
                         </view>
                         <view class="item_box__item">
                             <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_2.png"/>
-                            <span>满300减20</span>
+                            <span class="Full_reduction">满300减20</span>
                         </view>
                     </view>
                 </view>
@@ -55,11 +55,11 @@
                     <view class="item_box">
                         <view class="item_box__item">
                             <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_3.png"/>
-                            <span>好货必买</span>
+                            <span class="Full_reduction">好货必买</span>
                         </view>
                         <view class="item_box__item">
                             <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_4.png"/>
-                            <span>好货必买</span>
+                            <span class="Full_reduction">好货必买</span>
                         </view>
                     </view>
                 </view>
@@ -70,11 +70,11 @@
                     <view class="item_box">
                         <view class="item_box__item">
                             <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_5.png"/>
-                            <span>满258减20</span>
+                            <span class="Full_reduction">满258减20</span>
                         </view>
                         <view class="item_box__item">
                             <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_6.png"/>
-                            <span>满300减20</span>
+                            <span class="Full_reduction">满300减20</span>
                         </view>
                     </view>
                 </view>
@@ -83,17 +83,17 @@
                     <view class="item_box">
                         <view class="item_box__item">
                             <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_7.png"/>
-                            <span>已降11元</span>
+                            <span class="Full_reduction">已降11元</span>
                         </view>
                         <view class="item_box__item">
                             <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_8.png"/>
-                            <span>已降30元</span>
+                            <span class="Full_reduction">已降30元</span>
                         </view>
                     </view>
                 </view>
             </view>
             <view class="box-five">
-                <view class="box-five__tile">天猫榜单</view>
+                <view class="main-tile">天猫榜单</view>
                 <view class="top_1">
                     <span class="mark">趋势榜</span>
                     <view class="top_img">
@@ -123,7 +123,7 @@
                 <span class="mark_two">人气榜</span>
                 <view class="box-six__title">
                     <span>性价正装鞋子榜</span>
-                    <span>月销5802件</span>
+                    <span class="sales">月销5802件</span>
                 </view>
                 <view class="box-six__swiper">
                     <swiper class="swiper" autoplay="{{autoplay_two}}" interval="{{interval_two}}" duration="{{duration_two}}" circular="true">
@@ -135,7 +135,125 @@
                     </swiper>
                 </view>
             </view>
-            
+            <view class="box-seven">
+                <view class="box-seven__title">
+                    <span>人气榜</span>
+                    <span>质感粉底金榜</span>
+                    <span class="sales">人气上升222%</span>
+                </view>
+                <view class="box-seven__img">
+                    <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_16.png"/>
+                </view>
+            </view>
+            <view class="box-seven">
+                <view class="box-seven__title">
+                    <span>人气榜</span>
+                    <span>玻尿酸面膜榜</span>
+                    <span class="sales">人气上升678%</span>
+                </view>
+                <view class="box-seven__img">
+                    <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_17.png"/>
+                </view>
+            </view>
+            <view class="box-seven">
+                <view class="box-seven__title">
+                    <span>人气榜</span>
+                    <span>性价运动鞋榜</span>
+                    <span class="sales">人气上升225%</span>
+                </view>
+                <view class="box-seven__img">
+                    <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_18.png"/>
+                </view>
+            </view>
+            <view class="box-seven">
+                <view class="box-seven__title">
+                    <span>人气榜</span>
+                    <span>优质溜溜车榜</span>
+                    <span class="sales">人气上升888%</span>
+                </view>
+                <view class="box-seven__img">
+                    <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_19.png"/>
+                </view>
+            </view>
+            <view class="box-eight">
+                <view class="main-tile">猜你喜欢</view>
+                <view class="box-eight__item">
+                    <view class="item_img">
+                        <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_20.png"/>
+                    </view>
+                    <view class="item_lable">
+                        <span>HomeFacialPro</span>
+                    </view>
+                    <view class="item_title">
+                        <span>hfp补水亮肤爽肤水乳液烟酰胺套装</span>
+                        <view class="item_channel">
+                            <span class="Full_reduction">满300减20</span>
+                            <span class="official_sales">官方直售</span>
+                        </view>
+                    </view>
+                    <view class="item_price">
+                        <span>￥298</span>
+                        <span>看相似</span>
+                    </view>
+                </view>
+                <view class="box-eight__item">
+                    <view class="item_img">
+                        <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_21.png"/>
+                    </view>
+                    <view class="item_lable">
+                        <span>青尔绿叶</span>
+                    </view>
+                    <view class="item_title">
+                        <span>hfp补水亮肤爽肤水乳液烟酰胺套装</span>
+                        <view class="item_channel">
+                            <span class="Full_reduction">满300减20</span>
+                            <span class="official_sales">官方直售</span>
+                        </view>
+                    </view>
+                    <view class="item_price">
+                        <span>￥68</span>
+                        <span>看相似</span>
+                    </view>
+                </view>
+                <view class="box-eight__item">
+                    <view class="item_img">
+                        <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_22.png"/>
+                    </view>
+                    <view class="item_lable">
+                        <span>考味佳</span>
+                    </view>
+                    <view class="item_title">
+                        <span>hfp补水亮肤爽肤水乳液烟酰胺套装</span>
+                        <view class="item_channel">
+                            <span class="Full_reduction">满300减20</span>
+                            <span class="official_sales">官方直售</span>
+                        </view>
+                    </view>
+                    <view class="item_price">
+                        <span>￥24.5</span>
+                        <span>看相似</span>
+                    </view>
+                </view>
+                <view class="box-eight__item">
+                    <view class="item_img">
+                        <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_23.png"/>
+                    </view>
+                    <view class="item_lable">
+                        <span>LIYANG/黎漾</span>
+                    </view>
+                    <view class="item_title">
+                        <span>hfp补水亮肤爽肤水乳液烟酰胺套装</span>
+                        <view class="item_channel">
+                            <span class="Full_reduction">满300减20</span>
+                            <span class="official_sales">官方直售</span>
+                        </view>
+                    </view>
+                    <view class="item_price">
+                        <span>￥90</span>
+                        <span>看相似</span>
+                    </view>
+                </view>
+            </view>
         </view>
     </view>
 </template>
@@ -186,6 +304,91 @@ export default class Index extends wepy.page {
 </script>
 
 <style lang="less">
+//主标题
+.main-tile{
+    text-align: left;
+    margin-left: 20rpx;
+    white-space: pre-wrap;
+    border: 0px solid black;
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+    align-content: flex-start;
+    flex-shrink: 0;
+    font-size: 36rpx;
+    color: rgb(51, 51, 51);
+    font-weight: bold;
+}
+//已售/上升等标签
+.sales{
+    white-space: nowrap;
+    border: 0rpx solid black;
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+    align-content: flex-start;
+    flex-shrink: 0;
+    font-size: 24rpx;
+    color: rgb(153, 153, 153);
+    line-height: 40rpx;
+    overflow: hidden;
+}
+//满减标签
+.Full_reduction{
+    white-space:nowrap;
+    border:1rpx solid #ff0036;
+    position:relative;
+    box-sizing:border-box;
+    display:block;
+    -webkit-box-orient:vertical;
+    flex-direction:column;
+    align-content:flex-start;
+    flex-shrink:0;
+    font-size:23rpx;
+    max-width:148rpx;
+    text-overflow:ellipsis;
+    background-color:#ffedf1;
+    height:34rpx;
+    line-height:27rpx;
+    padding-left:2rpx;
+    padding-right:2rpx;
+    border-radius:1rpx;
+    color:#ff0036 !important;
+    text-align:center;
+    overflow:hidden;
+    margin-top: -20rpx;
+    margin-left: 10rpx;
+}
+//官方直售标签
+.official_sales{
+    white-space:nowrap;
+    border:1rpx solid #4a90e2;
+    position:relative;
+    box-sizing:border-box;
+    display:block;
+    -webkit-box-orient:vertical;
+    flex-direction:column;
+    align-content:flex-start;
+    flex-shrink:0;
+    font-size:23rpx;
+    max-width:125rpx;
+    text-overflow:ellipsis;
+    background-color:#fff;
+    height:34rpx;
+    line-height:27rpx;
+    padding-left:2rpx;
+    padding-right:2rpx;
+    border-radius:1rpx;
+    color:#4a90e2 !important;
+    text-align:center;
+    overflow:hidden;
+    margin-top: -20rpx;
+    // margin-left: 10rpx;
+}
 //导航栏
 .nav_list {
   color: #404040;
@@ -248,31 +451,7 @@ export default class Index extends wepy.page {
                     width: 140rpx;
                     height: 145rpx;
                 }
-                span{
-                    white-space:nowrap;
-                    border:1rpx solid #ff0036;
-                    position:relative;
-                    box-sizing:border-box;
-                    display:block;
-                    -webkit-box-orient:vertical;
-                    flex-direction:column;
-                    align-content:flex-start;
-                    flex-shrink:0;
-                    font-size:23rpx;
-                    max-width:125rpx;
-                    text-overflow:ellipsis;
-                    background-color:#ffedf1;
-                    height:34rpx;
-                    line-height:27rpx;
-                    padding-left:2rpx;
-                    padding-right:2rpx;
-                    border-radius:1rpx;
-                    color:#ff0036;
-                    text-align:center;
-                    overflow:hidden;
-                    margin-top: -20rpx;
-                    margin-left: 10rpx;
-                }
+                
             }
         }
     }
@@ -280,22 +459,6 @@ export default class Index extends wepy.page {
 //天猫榜单
 .box-five{
     text-align: center;
-    .box-five__tile{
-        text-align: left;
-        margin-left: 20rpx;
-        white-space: pre-wrap;
-        border: 0px solid black;
-        position: relative;
-        box-sizing: border-box;
-        display: block;
-        -webkit-box-orient: vertical;
-        flex-direction: column;
-        align-content: flex-start;
-        flex-shrink: 0;
-        font-size: 36rpx;
-        color: rgb(51, 51, 51);
-        font-weight: bold;
-    }
     .top_img{
         width: 100%;
         image{
@@ -356,7 +519,7 @@ export default class Index extends wepy.page {
     margin: 20rpx;
     display: flex;
     position: relative;
-    .mark_two{
+    .mark_two {
         background-color: #c99d6a;
         color: #ffffff;
         font-size:26rpx;
@@ -366,12 +529,12 @@ export default class Index extends wepy.page {
         top: 0rpx;
         left: 30rpx;
     }
-    .box-six__title{
+    .box-six__title {
         display: inline-block;
         width: 250rpx;
         padding-top:50rpx;
         padding-left:30rpx;
-        span:nth-child(1){
+        span:nth-child(1) {
             white-space: nowrap;
             border: 0rpx solid black;
             position: relative;
@@ -387,24 +550,8 @@ export default class Index extends wepy.page {
             font-weight: 600;
             overflow: hidden;
         }
-        span:nth-child(2){
-            white-space: nowrap;
-            border: 0rpx solid black;
-            position: relative;
-            box-sizing: border-box;
-            display: block;
-            -webkit-box-orient: vertical;
-            flex-direction: column;
-            align-content: flex-start;
-            flex-shrink: 0;
-            font-size: 24rpx;
-            color: rgb(153, 153, 153);
-            line-height: 40rpx;
-            overflow: hidden;
-        }
     }
     .box-six__swiper{
-        // float: right;
         display: inline-block;
         .swiper{
             height:150rpx;
@@ -412,6 +559,199 @@ export default class Index extends wepy.page {
             image{
                 width: 100%;
                 height: 100%;
+            }
+        }
+    }
+}
+//子人气榜
+.box-seven{
+    width: 46%;
+    background-color: #f8f8f8;
+    display:inline-block;
+    margin-left:20rpx;
+    margin-bottom:20rpx;
+    .box-seven__title{
+        display: inline-block;
+        padding: 10rpx 20rpx;
+        span:nth-child(1){
+            white-space: nowrap;
+            position: relative;
+            box-sizing: border-box;
+            display: block;
+            -webkit-box-orient: vertical;
+            flex-direction: column;
+            align-content: flex-start;
+            flex-shrink: 0;
+            font-size: 22rpx;
+            color: rgb(200, 157, 107);
+            line-height: 30rpx;
+            overflow: hidden;
+        }
+        span:nth-child(2){
+                white-space: nowrap;
+                border: 0px solid black;
+                position: relative;
+                box-sizing: border-box;
+                display: block;
+                -webkit-box-orient: vertical;
+                flex-direction: column;
+                align-content: flex-start;
+                flex-shrink: 0;
+                font-size: 26rpx;
+                color: rgb(49, 49, 49);
+                line-height: 30rpx;
+                font-weight: 600;
+                overflow: hidden;
+        }
+    }
+    .box-seven__img{
+        display: inline-block;
+        width: 120rpx;
+        height: 120rpx;
+        padding: 10rpx;
+        image{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+//猜你喜欢
+.box-eight{
+    .box-eight__item{
+        width: 46%;
+        position: relative;
+        display: inline-flex;
+        -webkit-box-orient: vertical;
+        flex-direction: column;
+        align-content: flex-start;
+        flex-shrink: 0;
+        margin-left:20rpx;
+        margin-bottom:20rpx;
+        border: 1rpx solid #ededed;
+        .item_img{
+            background-color: #f7f7f7;
+            width: 89%;
+            padding: 20rpx;
+            text-align: center;
+            image{
+                width: 250rpx;
+                height: 250rpx;
+            }
+        }
+        .item_lable{
+            position: absolute;
+            box-sizing: border-box;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            flex-direction: row;
+            align-content: flex-start;
+            flex-shrink: 0;
+            -webkit-box-align: center;
+            align-items: center;
+            background-color: rgb(205, 163, 177);
+            top: 285rpx;
+            margin-left: 26rpx;
+            padding-left: 10rpx;
+            padding-right: 10rpx;
+            height: 40rpx;
+            span{
+                white-space: pre-wrap;
+                position: relative;
+                box-sizing: border-box;
+                display: flex;
+                -webkit-box-orient: vertical;
+                flex-direction: column;
+                place-content: flex-start center;
+                flex-shrink: 0;
+                font-size: 22rpx;
+                height: 40rpx;
+                color: rgb(255, 255, 255);
+                line-height: 40rpx;
+                -webkit-box-pack: center;
+                -webkit-box-align: center;
+                align-items: center;
+            }
+        }
+        .item_title{
+            position: relative;
+            box-sizing: border-box;
+            display: flex;
+            -webkit-box-orient: vertical;
+            flex-direction: column;
+            align-content: flex-start;
+            flex-shrink: 0;
+            padding: 10rpx 10rpx 0rpx;
+            span{
+                white-space: pre-wrap;
+                position: relative;
+                box-sizing: border-box;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                flex-direction: column;
+                align-content: flex-start;
+                flex-shrink: 0;
+                font-size: 28rpx;
+                line-height: 38rpx;
+                height: 80rpx;
+                margin-top: 20rpx;
+                color: rgb(62, 62, 62);
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+            }
+            .item_channel{
+                position: relative;
+                box-sizing: border-box;
+                display: flex;
+                -webkit-box-orient: horizontal;
+                flex-direction: row;
+                align-content: flex-start;
+                flex-shrink: 0;
+                height: 50rpx;
+                span{
+                    line-height:35rpx !important;
+                    height:40rpx !important;
+                    margin-top:10rpx !important;
+                    margin-right: 10rpx;
+                }
+            }
+        }
+        .item_price{
+            position: relative;
+            box-sizing: border-box;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            flex-direction: row;
+            align-content: flex-start;
+            flex-shrink: 0;
+            width: 300rpx;
+            -webkit-box-align: center;
+            align-items: center;
+            height: 40rpx;
+            margin-top: 20rpx;
+            margin-bottom: 20rpx;
+            width: 100%;
+            span:nth-child(1){
+                white-space: pre-wrap;
+                position: relative;
+                box-sizing: border-box;
+                display: block;
+                -webkit-box-orient: vertical;
+                flex-direction: column;
+                align-content: flex-start;
+                flex-shrink: 0;
+                font-size: 30rpx;
+                font-weight: 600;
+                color: rgb(255, 0, 0);
+                line-height: 40rpx;
+                margin-left: 20rpx;
+            }
+            span:nth-child(2){
+                background-color: rgb(255, 230, 235);
+                color: rgb(255, 0, 54);
+                border-radius: 20rpx;
+                padding: 5rpx 20rpx;
+                font-size: 24rpx;
+                margin-left: 100rpx;
             }
         }
     }
