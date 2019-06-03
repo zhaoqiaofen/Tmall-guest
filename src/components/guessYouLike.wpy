@@ -1,0 +1,175 @@
+<template>
+    <view class="page" wx:if="{{guessYouLike.length > 0}}">
+        <view class="box-eight__item" wx:for="{{guessYouLike}}" wx:key="id">
+            <view class="item_img">
+                <image src="{{item.imgUrl}}"/>
+            </view>
+            <view class="item_lable">
+                <span>{{item.logo}}</span>
+            </view>
+            <view class="item_title">
+                <span>{{item.title}}</span>
+                <view class="item_channel">
+                    <span class="Full_reduction">{{item.mark1}}</span>
+                    <span class="official_sales">{{item.mark2}}</span>
+                </view>
+            </view>
+            <view class="item_price">
+                <span>{{item.price}}</span>
+                <span>{{item.look}}</span>
+            </view>
+        </view>
+    </view>
+</template>
+<script>
+/**
+ * 猜你喜欢组件
+ */
+import wepy from 'wepy'
+export default class guessYouLike extends wepy.component{
+    props = {
+        guessYouLike: Array,
+        default: []
+    }
+}
+</script>
+<style lang="less" scoped>
+.box-eight__item{
+    width: 46%;
+    position: relative;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+    align-content: flex-start;
+    flex-shrink: 0;
+    margin-left:20rpx;
+    margin-bottom:20rpx;
+    border: 1rpx solid #ededed;
+    .item_img{
+        background-color: #f7f7f7;
+        width: 89%;
+        padding: 20rpx;
+        text-align: center;
+        image{
+            width: 250rpx;
+            height: 250rpx;
+        }
+    }
+    .item_lable{
+        position: absolute;
+        box-sizing: border-box;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        flex-direction: row;
+        align-content: flex-start;
+        flex-shrink: 0;
+        -webkit-box-align: center;
+        align-items: center;
+        background-color: rgb(205, 163, 177);
+        top: 285rpx;
+        margin-left: 26rpx;
+        padding-left: 10rpx;
+        padding-right: 10rpx;
+        height: 40rpx;
+        span{
+            white-space: pre-wrap;
+            position: relative;
+            box-sizing: border-box;
+            display: flex;
+            -webkit-box-orient: vertical;
+            flex-direction: column;
+            place-content: flex-start center;
+            flex-shrink: 0;
+            font-size: 22rpx;
+            height: 40rpx;
+            color: rgb(255, 255, 255);
+            line-height: 40rpx;
+            -webkit-box-pack: center;
+            -webkit-box-align: center;
+            align-items: center;
+        }
+    }
+    .item_title{
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        -webkit-box-orient: vertical;
+        flex-direction: column;
+        align-content: flex-start;
+        flex-shrink: 0;
+        padding: 10rpx 10rpx 0rpx;
+        span{
+            white-space: pre-wrap;
+            position: relative;
+            box-sizing: border-box;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            flex-direction: column;
+            align-content: flex-start;
+            flex-shrink: 0;
+            font-size: 28rpx;
+            line-height: 38rpx;
+            height: 80rpx;
+            margin-top: 20rpx;
+            color: rgb(62, 62, 62);
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+        }
+        .item_channel{
+            position: relative;
+            box-sizing: border-box;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            flex-direction: row;
+            align-content: flex-start;
+            flex-shrink: 0;
+            height: 50rpx;
+            span{
+                line-height:35rpx !important;
+                height:40rpx !important;
+                margin-top:10rpx !important;
+                margin-right: 10rpx;
+            }
+        }
+    }
+    .item_price{
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        flex-direction: row;
+        align-content: flex-start;
+        flex-shrink: 0;
+        width: 300rpx;
+        -webkit-box-align: center;
+        align-items: center;
+        height: 40rpx;
+        margin-top: 20rpx;
+        margin-bottom: 20rpx;
+        width: 100%;
+        span:nth-child(1){
+            white-space: pre-wrap;
+            position: relative;
+            box-sizing: border-box;
+            display: block;
+            -webkit-box-orient: vertical;
+            flex-direction: column;
+            align-content: flex-start;
+            flex-shrink: 0;
+            font-size: 30rpx;
+            font-weight: 600;
+            color: rgb(255, 0, 0);
+            line-height: 40rpx;
+            margin-left: 20rpx;
+        }
+        span:nth-child(2){
+            background-color: rgb(255, 230, 235);
+            color: rgb(255, 0, 54);
+            border-radius: 20rpx;
+            padding: 5rpx 20rpx;
+            font-size: 24rpx;
+            margin-left: 100rpx;
+        }
+    }
+}
+</style>

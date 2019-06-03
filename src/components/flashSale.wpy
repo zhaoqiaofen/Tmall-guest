@@ -1,0 +1,57 @@
+<template>
+    <view class="page" wx:if="{{flashSale.length > 0}}">
+        <view class="box_four__item" wx:for="{{flashSale}}" wx:key="id">
+            <view class="placeholder">{{item.title}}</view>
+            <view class="item_box" wx:if="{{item.mark.length > 0}}">
+                <view class="item_box__item" wx:for="{{item.mark}}" wx:key="id">
+                    <image src="{{item.imgUrl}}"/>
+                    <span class="Full_reduction">{{item.title}}</span>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<script>
+/**
+ * 限时抢购组件
+ */
+import wepy from 'wepy';
+export default class flashSale extends wepy.component{
+    props = {
+        flashSale: {
+            type: Array,
+            default: []
+        }
+    }
+}
+</script>
+<style lang="less" scoped>
+    .box_four__item{
+        width: 345rpx;
+        height:290rpx;
+        border:1px solid #f7f7f7;
+        background-color:#f7f7f7;
+        float:left;
+        margin-left:20rpx;
+        margin-bottom:20rpx;
+        .placeholder{
+            font-size:38rpx;
+            font-weight:600;
+            width:160rpx;
+            margin:20rpx 30rpx;
+            color: rgb(32, 32, 32)
+        }
+        .item_box{
+            text-align: center;
+            .item_box__item{
+                float: left;
+                margin-left: 30rpx;
+                image{
+                    width: 140rpx;
+                    height: 145rpx;
+                }
+                
+            }
+        }
+    }
+</style>

@@ -17,14 +17,14 @@
 </template>
 
 <script>
+    /**
+     * 搜索组件
+     */
     import wepy from 'wepy';
-
-    export default class Searchbar extends wepy.page {
-
+    export default class Searchbar extends wepy.component {
         data = {
             inputVal: ''
         };
-
         methods = {
             clearInput () {
                 this.inputVal = '';

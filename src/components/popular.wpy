@@ -1,0 +1,79 @@
+<template>
+    <view class="page" wx:if="{{popular.length > 0}}">
+        <view class="page__bd" wx:for="{{popular}}" wx:key="id">
+            <view class="box-seven__title">
+                <span>{{item.title}}</span>
+                <span>{{item.subtitle}}</span>
+                <span class="sales">{{item.remark}}</span>
+            </view>
+            <view class="box-seven__img">
+                <image src="{{item.imgUrl}}"/>
+            </view>
+        </view>
+    </view>
+</template>
+<script>
+/**
+ * 人气榜组件
+ */
+import wepy from 'wepy'
+export default class popular extends wepy.component{
+    props = {
+        popular: Array,
+        default: []
+    }
+}
+</script>
+<style lang="less" scoped>
+.page__bd{
+    width: 46%;
+    background-color: #f8f8f8;
+    display:inline-block;
+    margin-left:20rpx;
+    margin-bottom:20rpx;
+    .box-seven__title{
+        display: inline-block;
+        padding: 10rpx 20rpx;
+        span:nth-child(1){
+            white-space: nowrap;
+            position: relative;
+            box-sizing: border-box;
+            display: block;
+            -webkit-box-orient: vertical;
+            flex-direction: column;
+            align-content: flex-start;
+            flex-shrink: 0;
+            font-size: 22rpx;
+            color: rgb(200, 157, 107);
+            line-height: 30rpx;
+            overflow: hidden;
+        }
+        span:nth-child(2){
+                white-space: nowrap;
+                border: 0px solid black;
+                position: relative;
+                box-sizing: border-box;
+                display: block;
+                -webkit-box-orient: vertical;
+                flex-direction: column;
+                align-content: flex-start;
+                flex-shrink: 0;
+                font-size: 26rpx;
+                color: rgb(49, 49, 49);
+                line-height: 30rpx;
+                font-weight: 600;
+                overflow: hidden;
+        }
+    }
+    .box-seven__img{
+        display: inline-block;
+        width: 120rpx;
+        height: 120rpx;
+        padding: 10rpx;
+        image{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+</style>
