@@ -1,5 +1,36 @@
 <template>
-    <view>分类</view>
+    <view class="page">
+        <view class="nav_left">
+            <block wx:for="{{cateItems}}" wx:key="id">
+                <view class="nav_left_items {{curNav == item.cate_id ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.cate_id}}">{{item.cate_name}}</view>
+            </block>
+        </view>
+        <view class="nav_right">
+            <view wx:if="{{cateItems[curIndex].ishaveChild}}">
+                <block wx:for="{{cateItems[curIndex].children}}" wx:key="id">
+                    <view class="nav_right_items">
+                        <navigator url="##" open-type="navigate" hover-class="none">
+                            <view>
+                                <block wx:if="{{item.image}}">
+                                    <image src="{{item.image}}"/>
+                                </block>
+                                <block wx:else>
+                                    <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/pic_160.png"/>
+                                </block>
+                            </view>
+                            <view wx:if="{{item.name}}">
+                                <text>{{item.name}}</text>
+                            </view>
+                            <view wx:else>
+                                <text></text>
+                            </view>
+                        </navigator>
+                    </view>
+                </block>
+            </view>
+            <view class="nodata_text" wx:else>暂无数据</view>
+        </view>
+    </view>
 </template>
 <script>
 import wepy from 'wepy'
@@ -8,14 +39,1832 @@ export default class Category extends wepy.page {
         navigationBarTitleText: '分类'
     }
     data = {
-
+        //商品列表
+        cateItems: [
+            {
+                cate_id: 1,
+                cate_name: "养颜护肤",
+                ishaveChild: true,
+                children:
+                [
+                    {
+                        child_id: 1,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 2,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 3,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 4,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 5,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 6,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 7,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 8,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 9,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 10,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 11,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 12,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                    ,
+                    {
+                        child_id: 13,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 14,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 15,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 16,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 17,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 18,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 19,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 20,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 21,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 22,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 23,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 24,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 25,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                ]
+            },
+            {
+                cate_id: 2,
+                cate_name: "宝宝奶粉",
+                ishaveChild: true,
+                children:
+                [
+                    {
+                        child_id: 1,
+                        name: '奶粉',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_29.png"
+                    },
+                    {
+                        child_id: 2,
+                        name: '奶粉',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_29.png"
+                    },
+                    {
+                        child_id: 3,
+                        name: '奶粉',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_29.png"
+                    },
+                    {
+                        child_id: 4,
+                        name: '奶粉',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_29.png"
+                    },
+                    {
+                        child_id: 5,
+                        name: '奶粉',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_29.png"
+                    },
+                    {
+                        child_id: 6,
+                        name: '奶粉',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_29.png"
+                    },
+                    {
+                        child_id: 7,
+                        name: '奶粉',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_29.png"
+                    },
+                    {
+                        child_id: 8,
+                        name: '奶粉',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_29.png"
+                    }
+                ]
+            },
+            {
+                cate_id: 3,
+                cate_name: "辅食营养",
+                ishaveChild: true,
+                children:
+                [
+                    {
+                        child_id: 1,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 2,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 3,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 4,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    }
+                ]
+            },
+            {
+                cate_id: 4,
+                cate_name: "海鲜",
+                ishaveChild: false,
+                children: []
+            },
+            {
+                cate_id: 5,
+                cate_name: "辅食营养",
+                ishaveChild: true,
+                children:
+                [
+                    {
+                        child_id: 1,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 2,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 3,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 4,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    }
+                ]
+            },
+            {
+                cate_id: 6,
+                cate_name: "辅食营养",
+                ishaveChild: true,
+                children:
+                [
+                    {
+                        child_id: 1,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 2,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 3,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 4,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    }
+                ]
+            },
+            {
+                cate_id: 7,
+                cate_name: "辅食营养",
+                ishaveChild: true,
+                children:
+                [
+                    {
+                        child_id: 1,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 2,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 3,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 4,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    }
+                ]
+            },
+            {
+                cate_id: 8,
+                cate_name: "辅食营养",
+                ishaveChild: true,
+                children:
+                [
+                    {
+                        child_id: 1,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 2,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 3,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 4,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    }
+                ]
+            },
+            {
+                cate_id: 9,
+                cate_name: "辅食营养",
+                ishaveChild: true,
+                children:
+                [
+                    {
+                        child_id: 1,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 2,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 3,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 4,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    }
+                ]
+            },
+            {
+                cate_id: 10,
+                cate_name: "辅食营养",
+                ishaveChild: true,
+                children:
+                [
+                    {
+                        child_id: 1,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 2,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 3,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    },
+                    {
+                        child_id: 4,
+                        name: '营养',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_30.png"
+                    }
+                ]
+            },
+            {
+                cate_id: 11,
+                cate_name: "养颜护肤",
+                ishaveChild: true,
+                children:
+                [
+                    {
+                        child_id: 1,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 2,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 3,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 4,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 5,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 6,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 7,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 8,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 9,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 10,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 11,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 12,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                    ,
+                    {
+                        child_id: 13,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 14,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 15,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 16,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 17,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 18,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 19,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 20,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 21,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 22,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 23,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 24,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 25,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                ]
+            },
+            {
+                cate_id: 12,
+                cate_name: "养颜护肤",
+                ishaveChild: true,
+                children:
+                [
+                    {
+                        child_id: 1,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 2,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 3,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 4,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 5,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 6,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 7,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 8,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 9,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 10,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 11,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 12,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                    ,
+                    {
+                        child_id: 13,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 14,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 15,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 16,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 17,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 18,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 19,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 20,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 21,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 22,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 23,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 24,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 25,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                ]
+            },
+            {
+                cate_id: 13,
+                cate_name: "养颜护肤",
+                ishaveChild: true,
+                children:
+                [
+                    {
+                        child_id: 1,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 2,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 3,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 4,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 5,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 6,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 7,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 8,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 9,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 10,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 11,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 12,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                    ,
+                    {
+                        child_id: 13,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 14,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 15,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 16,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 17,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 18,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 19,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 20,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 21,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 22,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 23,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 24,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 25,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                ]
+            },
+            {
+                cate_id: 14,
+                cate_name: "养颜护肤",
+                ishaveChild: true,
+                children:
+                [
+                    {
+                        child_id: 1,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 2,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 3,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 4,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 5,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 6,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 7,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 8,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 9,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 10,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 11,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 12,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                    ,
+                    {
+                        child_id: 13,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 14,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 15,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 16,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 17,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 18,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 19,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 20,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 21,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 22,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 23,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 24,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 25,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                ]
+            },
+            {
+                cate_id: 15,
+                cate_name: "养颜护肤",
+                ishaveChild: true,
+                children:
+                [
+                    {
+                        child_id: 1,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 2,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 3,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 4,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 5,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 6,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 7,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 8,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 9,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 10,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 11,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 12,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                    ,
+                    {
+                        child_id: 13,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 14,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 15,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 16,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 17,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 18,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 19,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 20,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 21,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 22,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 23,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 24,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 25,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                ]
+            },
+            {
+                cate_id: 16,
+                cate_name: "养颜护肤",
+                ishaveChild: true,
+                children:
+                [
+                    {
+                        child_id: 1,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 2,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 3,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 4,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 5,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 6,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 7,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 8,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 9,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 10,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 11,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 12,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                    ,
+                    {
+                        child_id: 13,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 14,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 15,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 16,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 17,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 18,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 19,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 20,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 21,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 22,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 23,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 24,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 25,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                ]
+            },
+            {
+                cate_id: 17,
+                cate_name: "养颜护肤",
+                ishaveChild: true,
+                children:
+                [
+                    {
+                        child_id: 1,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 2,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 3,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 4,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 5,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 6,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 7,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 8,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 9,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 10,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 11,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 12,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                    ,
+                    {
+                        child_id: 13,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 14,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 15,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 16,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 17,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 18,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 19,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 20,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 21,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 22,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 23,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 24,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 25,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                ]
+            },
+            {
+                cate_id: 18,
+                cate_name: "养颜护肤",
+                ishaveChild: true,
+                children:
+                [
+                    {
+                        child_id: 1,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 2,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 3,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 4,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 5,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 6,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 7,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 8,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 9,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 10,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 11,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 12,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                    ,
+                    {
+                        child_id: 13,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 14,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 15,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 16,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 17,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 18,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 19,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 20,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 21,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 22,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 23,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 24,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 25,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                ]
+            },
+            {
+                cate_id: 18,
+                cate_name: "养颜护肤",
+                ishaveChild: true,
+                children:
+                [
+                    {
+                        child_id: 1,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 2,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 3,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 4,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 5,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 6,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 7,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 8,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 9,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 10,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 11,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 12,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                    ,
+                    {
+                        child_id: 13,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 14,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 15,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 16,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 17,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 18,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 19,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 20,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 21,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 22,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 23,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 24,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 25,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                ]
+            },
+            {
+                cate_id: 20,
+                cate_name: "养颜护肤",
+                ishaveChild: true,
+                children:
+                [
+                    {
+                        child_id: 1,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 2,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 3,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 4,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 5,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 6,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 7,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 8,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 9,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 10,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 11,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 12,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                    ,
+                    {
+                        child_id: 13,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 14,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 15,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 16,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 17,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 18,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 19,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 20,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 21,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 22,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 23,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 24,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    },
+                    {
+                        child_id: 25,
+                        name: '护肤霜',
+                        image: "cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/goods_28.png"
+                    }
+                ]
+            },
+        ],
+        curNav: 1,
+        curIndex: 0
     }
-    methods = {
-
+    switchRightTab(e){
+        // 获取item项的id，和数组的下标值  
+        let id = e.target.dataset.id,
+        index = parseInt(e.target.dataset.index);
+        // 把点击到的某一项，设为当前index  
+        this.curNav = id;
+        this.curIndex = index;
     }
 }
 </script>
 
 <style lang="less">
-
+/*总体主盒子*/
+.page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  color: #939393;
+}
+/*左侧栏主盒子*/
+.nav_left{
+  /*设置行内块级元素（没使用定位）*/
+  position: fixed;
+  display: inline-block;
+  width: 25%;
+  height: 100%;
+  /*主盒子设置背景色为灰色*/
+  background: #f5f5f5;
+  text-align: center;
+}
+/*左侧栏list的item*/
+.nav_left .nav_left_items{
+  /*每个高30px*/
+  height: 30px;
+  /*垂直居中*/
+  line-height: 30px;
+  /*再设上下padding增加高度，总高42px*/
+  padding: 6px 0;
+  /*只设下边线*/
+  border-bottom: 1px solid #dedede;
+  /*文字14px*/
+  font-size: 14px;
+}
+/*左侧栏list的item被选中时*/
+.nav_left .nav_left_items.active{  
+  /*背景色变成白色*/  
+  background: #fff;  
+  color: #FF4040; 
+  border-left: 3px solid #FF4040;
+  transform: rotate(0deg) scale(1) translate(0%,0%); 
+  -webkit-transform: rotate(0deg) scale(1) translate(0%,0%);
+} 
+ 
+/*右侧栏主盒子*/
+.nav_right{
+  /*右侧盒子使用了绝对定位*/
+  position: absolute;
+  top: 0;
+  right: 0;
+  flex: 1;
+  /*宽度75%，高度占满，并使用百分比布局*/
+  width: 75%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #fff;
+}
+/*右侧栏list的item*/
+.nav_right .nav_right_items{
+  /*浮动向左*/
+  float: left;
+  /*每个item设置宽度是33.33%*/
+  width: 33.33%;
+  height: 80px;
+  text-align: center;
+}
+.nav_right .nav_right_items image{
+  /*被图片设置宽高*/
+  width: 50px;
+  height: 30px;
+}
+.nav_right .nav_right_items text{
+  /*给text设成块级元素*/
+  display: block;
+  margin-top: 5px;
+  font-size: 10px;
+  /*设置文字溢出部分为...*/
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.nodata_text
+{
+  color: black;
+  font-size: 14px;  
+  text-align: center;  
+}
 </style>
