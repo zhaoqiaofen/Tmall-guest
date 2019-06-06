@@ -1,10 +1,10 @@
 <template>
     <view class="page">
-        <view class="nav_left">
+        <scroll-view scroll-y class="nav_left">
             <block wx:for="{{cateItems}}" wx:key="id">
                 <view class="nav_left_items {{curNav == item.cate_id ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.cate_id}}">{{item.cate_name}}</view>
             </block>
-        </view>
+        </scroll-view>
         <view class="nav_right">
             <view wx:if="{{cateItems[curIndex].ishaveChild}}">
                 <block wx:for="{{cateItems[curIndex].children}}" wx:key="id">
@@ -1793,7 +1793,6 @@ export default class Category extends wepy.page {
 .nav_left{
   /*设置行内块级元素（没使用定位）*/
   position: fixed;
-  display: inline-block;
   width: 25%;
   height: 100%;
   /*主盒子设置背景色为灰色*/
@@ -1809,7 +1808,7 @@ export default class Category extends wepy.page {
   /*再设上下padding增加高度，总高42px*/
   padding: 6px 0;
   /*只设下边线*/
-  border-bottom: 1px solid #dedede;
+//   border-bottom: 1px solid #dedede;
   /*文字14px*/
   font-size: 14px;
 }
@@ -1819,8 +1818,8 @@ export default class Category extends wepy.page {
   background: #fff;  
   color: #FF4040; 
   border-left: 3px solid #FF4040;
-  transform: rotate(0deg) scale(1) translate(0%,0%); 
-  -webkit-transform: rotate(0deg) scale(1) translate(0%,0%);
+//   transform: rotate(0deg) scale(1) translate(0%,0%); 
+//   -webkit-transform: rotate(0deg) scale(1) translate(0%,0%);
 } 
  
 /*右侧栏主盒子*/

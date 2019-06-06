@@ -15,8 +15,8 @@
                 </view>
             </view>
             <view class="item_price">
-                <span>{{item.price}}</span>
-                <span>{{item.look}}</span>
+                <view class="item_price_num">{{item.price}}</view>
+                <view class="item_price_desc">{{item.look}}</view>
             </view>
         </view>
     </view>
@@ -135,7 +135,6 @@ export default class guessYouLike extends wepy.component{
     .item_price{
         position: relative;
         box-sizing: border-box;
-        display: flex;
         -webkit-box-orient: horizontal;
         flex-direction: row;
         align-content: flex-start;
@@ -147,7 +146,7 @@ export default class guessYouLike extends wepy.component{
         margin-top: 20rpx;
         margin-bottom: 20rpx;
         width: 100%;
-        span:nth-child(1){
+        .item_price_num{
             white-space: pre-wrap;
             position: relative;
             box-sizing: border-box;
@@ -160,15 +159,17 @@ export default class guessYouLike extends wepy.component{
             font-weight: 600;
             color: rgb(255, 0, 0);
             line-height: 40rpx;
-            margin-left: 20rpx;
+            float: left;
+            margin-left: 10rpx;
         }
-        span:nth-child(2){
+        .item_price_desc{
             background-color: rgb(255, 230, 235);
             color: rgb(255, 0, 54);
             border-radius: 20rpx;
             padding: 5rpx 20rpx;
             font-size: 24rpx;
-            margin-left: 100rpx;
+            float: right;
+            margin-right: 10rpx;
         }
     }
 }
