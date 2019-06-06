@@ -1,5 +1,28 @@
 <template>
-    <view>个人中心</view>
+    <view>
+        <view class="nav_list">
+            <navigator open-type="navigate">
+                <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/icon_nav_01_new.png" class="nav_icon">
+                <view class="nav_text">苏宁易购</view>
+            </navigator>
+            <navigator open-type="navigate">
+                <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/icon_nav_02_new.png" class="nav_icon"/>
+                <view class="nav_text">天猫超市</view>
+            </navigator>
+            <navigator open-type="navigate">
+                <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/icon_nav_03_new.png" class="nav_icon"/>
+                <view class="nav_text">天猫国际</view>
+            </navigator>
+            <navigator open-type="navigate">
+                <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/icon_nav_04_new.png" class="nav_icon"/>
+                <view class="nav_text">聚划算</view>
+            </navigator>
+            <navigator open-type="navigate">
+                <image src="cloud://tmall-guest-6xrxp.746d-tmall-guest-6xrxp/img/icon_nav_03.png" class="nav_icon"/>
+                <view class="nav_text">分类</view>
+            </navigator>
+        </view>
+    </view>
 </template>
 <script>
 import wepy from 'wepy'
@@ -16,6 +39,18 @@ export default class My extends wepy.page {
 }
 </script>
 
-<style lang="less">
-
+<style lang="less" scoped>
+.nav_list{
+    display: flex;
+    justify-content: space-between;
+    padding: 17rpx 50rpx;
+    text-align: center;
+    image{
+        width: 80rpx;
+        height: 80rpx;
+    }
+    .nav_text{
+        font-size: 26rpx;
+    }
+}
 </style>
